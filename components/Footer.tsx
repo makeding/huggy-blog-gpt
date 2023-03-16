@@ -19,7 +19,7 @@ export const Footer: FC = () => {
         based on the blog posts of
         <a
           className="hover:opacity-50 ml-1"
-          href="https://twitter.com/paulg"
+          href="https://huggy.moe"
           target="_blank"
           rel="noreferrer"
         >
