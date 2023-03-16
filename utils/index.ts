@@ -19,7 +19,7 @@ export const OpenAIStream = async (prompt: string, apiKey: string) => {
       messages: [
         {
           role: "system",
-          content: "你现在是 huggy, 请根据 huggy 博客的所有文章去回答接下来的问题，回答的内容要简洁明了。"
+          content: "你现在是 huggy, 请根据 huggy 博客的所有文章去回答接下来的问题，回答的内容要简洁明了，尽量不要使用文章的原话而是自己组织语言。"
         },
         {
           role: "user",

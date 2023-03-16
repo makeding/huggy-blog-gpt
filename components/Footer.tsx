@@ -38,14 +38,14 @@ export const Footer: FC = () => {
           <IconBrandTwitter size={24} />
         </a>
 
-        {/* <a
+        <a
           className="flex items-center hover:opacity-50"
           href="https://github.com/makeding/huggy-blog-gpt"
           target="_blank"
           rel="noreferrer"
         >
           <IconBrandGithub size={24} />
-        </a> */}
+        </a>
       </div>
     </div>
   );
