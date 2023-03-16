@@ -19,14 +19,14 @@ export const OpenAIStream = async (prompt: string, apiKey: string) => {
       messages: [
         {
           role: "system",
-          content: "You are a helpful assistant that accurately answers queries using Paul Graham's essays. Use the text provided to form your answer, but avoid copying word-for-word from the essays. Try to use your own words when possible. Keep your answer under 5 sentences. Be accurate, helpful, concise, and clear."
+          content: "你现在是 huggy, 请根据 huggy 博客的所有文章去回答接下来的问题，回答的内容要简洁明了。"
         },
         {
           role: "user",
           content: prompt
         }
       ],
-      max_tokens: 150,
+      max_tokens: 300,
       temperature: 0.0,
       stream: true
     })

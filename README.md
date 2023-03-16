@@ -1,20 +1,20 @@
-# Paul Graham GPT
+# huggy blog GPT
 
-AI-powered search and chat for [Paul Graham's](https://twitter.com/paulg) [essays](http://www.paulgraham.com/articles.html).
+AI-powered search and chat for [huggy's](https://twitter.com/wosign) [blog](https://blog.huggy.moe/posts/).
 
 All code & data used is 100% open-source.
 
 ## Dataset
 
-The dataset is a CSV file containing all text & embeddings used.
+The dataset is a searchindex file containing all text & embeddings used.
 
-Download it [here](https://drive.google.com/file/d/1BxcPw2mn0VYFucc62wlt9H0nQiOu38ki/view?usp=sharing).
+Download it [here](https://blog.huggy.moe/searchindex.json).
 
 I recommend getting familiar with fetching, cleaning, and storing data as outlined in the scraping and embedding scripts below, but feel free to skip those steps and just use the dataset.
 
 ## How It Works
 
-Paul Graham GPT provides 2 things:
+huggy GPT provides 2 things:
 
 1. A search interface.
 2. A chat interface.
@@ -92,7 +92,7 @@ SUPABASE_SERVICE_ROLE_KEY=
 npm run scrape
 ```
 
-This scrapes all of the essays from Paul Graham's website and saves them to a json file.
+This scrapes all of the essays from huggy's website and saves them to a json file.
 
 7. Run embedding script
 
@@ -116,7 +116,7 @@ npm run dev
 
 ## Credits
 
-Thanks to [Paul Graham](https://twitter.com/paulg) for his writing.
+Thanks to [huggy](https://twitter.com/paulg) for his writing.
 
 I highly recommend you read his essays.
 

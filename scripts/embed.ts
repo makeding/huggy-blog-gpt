@@ -1,7 +1,7 @@
 import { PGEssay, PGJSON } from "@/types";
 import { loadEnvConfig } from "@next/env";
 import { createClient } from "@supabase/supabase-js";
-import fs from "fs";
+import { readFileSync } from "fs";
 import { Configuration, OpenAIApi } from "openai";
 
 loadEnvConfig("");
@@ -53,7 +53,7 @@ const generateEmbeddings = async (essays: PGEssay[]) => {
 };
 
 (async () => {
-  const book: PGJSON = JSON.parse(fs.readFileSync("scripts/pg.json", "utf8"));
+  const book: PGJSON = JSON.parse(readFileSync("scripts/pg.json", "utf8"));
 
   await generateEmbeddings(book.essays);
 })();
