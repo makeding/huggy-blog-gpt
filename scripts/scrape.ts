@@ -1,40 +1,9 @@
 import { PGChunk, PGEssay, PGJSON } from "@/types";
 import axios from "axios";
-import * as cheerio from "cheerio";
 import { writeFileSync } from "fs";
 import { encode } from "gpt-3-encoder";
 
-const BASE_URL = "http://www.paulgraham.com/";
 const CHUNK_SIZE = 200;
-
-const getLinks = async () => {
-  const html = await axios.get(`${BASE_URL}articles.html`);
-  const $ = cheerio.load(html.data);
-  const tables = $("table");
-
-  const linksArr: { url: string; title: string }[] = [];
-
-  tables.each((i, table) => {
-    if (i === 2) {
-      const links = $(table).find("a");
-      links.each((i, link) => {
-        const url = $(link).attr("href");
-        const title = $(link).text();
-
-        if (url && url.endsWith(".html")) {
-          const linkObj = {
-            url,
-            title
-          };
-
-          linksArr.push(linkObj);
-        }
-      });
-    }
-  });
-
-  return linksArr;
-};
 
 const chunkEssay = async (essay: PGEssay) => {
   const { title, url, date, thanks, content, ...chunklessSection } = essay;
@@ -108,13 +77,10 @@ const chunkEssay = async (essay: PGEssay) => {
 };
 
 (async () => {
-  const links = await getLinks();
-
   let essays = [];
   const d = await axios.get('https://blog.huggy.moe/searchindex.json')
   for (let i = 0; i < d.data.posts.length; i++) {
     const post = d.data.posts[i];
-    // console.log(post)
     const eassy: PGEssay = {
       title: post.title,
       url: post.uri,
@@ -123,6 +89,7 @@ const chunkEssay = async (essay: PGEssay) => {
       content: post.content,
       length: post.content.length,
       tokens: encode(post.content).length,
+      chunks: []
     }
     const chunkedEssay = await chunkEssay(eassy);
     essays.push(chunkedEssay);

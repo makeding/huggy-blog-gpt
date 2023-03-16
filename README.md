@@ -2,6 +2,8 @@
 
 AI-powered search and chat for [huggy's](https://twitter.com/wosign) [blog](https://blog.huggy.moe/posts/).
 
+> Compatible with all [hugo](https://gohugo.io) powered blogs and have /searchindex.json
+
 All code & data used is 100% open-source.
 
 ## Dataset
