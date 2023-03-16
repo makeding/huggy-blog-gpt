@@ -81,7 +81,7 @@ const chunkEssay = async (essay: PGEssay) => {
   const d = await axios.get('https://blog.huggy.moe/searchindex.json')
   for (let i = 0; i < d.data.posts.length; i++) {
     const post = d.data.posts[i];
-    const eassy: PGEssay = {
+    const essay: PGEssay = {
       title: post.title,
       url: post.uri,
       date: post.year,
@@ -91,7 +91,7 @@ const chunkEssay = async (essay: PGEssay) => {
       tokens: encode(post.content).length,
       chunks: []
     }
-    const chunkedEssay = await chunkEssay(eassy);
+    const chunkedEssay = await chunkEssay(essay);
     essays.push(chunkedEssay);
   }
 

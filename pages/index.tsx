@@ -202,7 +202,7 @@ export default function Home() {
         <title>huggy GPT</title>
         <meta
           name="description"
-          content={`AI-powered search and chat for huggy's essays.`}
+          content={`AI-powered search and chat for huggy's blog.`}
         />
         <meta
           name="viewport"

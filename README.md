@@ -1,6 +1,6 @@
 # huggy blog GPT
 
-AI-powered search and chat for [huggy's](https://twitter.com/wosign) [blog](https://blog.huggy.moe/posts/).
+AI-powered search and chat for [huggy's blog](https://blog.huggy.moe/posts/).
 
 > Compatible with all [hugo](https://gohugo.io) powered blogs and have /searchindex.json
 
@@ -118,11 +118,7 @@ npm run dev
 
 ## Credits
 
-Thanks to [huggy](https://twitter.com/paulg) for his writing.
-
-I highly recommend you read his essays.
-
-3 years ago they convinced me to learn to code, and it changed my life.
+[paulg](https://twitter.com/paulg)
 
 ## Contact
 
